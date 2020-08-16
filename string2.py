@@ -4,7 +4,9 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = """Tracy DeWitt , used Howard Post
+https://www.w3schools.com/python/ref_string_replace.asp,
+https://stackoverflow.com/questions/17002516/python-divide-odd-length-string-and-combine"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,8 +25,15 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    str_len = len(s)
+
+    if str_len >= 3:
+        if s[-3:] == 'ing':
+            s += 'ly'
+        else:
+            s += 'ing'
+
+    return s
 
 
 # E. not_bad
@@ -37,8 +46,14 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
+    s_not = s.find('not')
+    s_bad = s.find('bad')
+
+    if s_not < s_bad:
+        s = s.replace(s[s_not:], 'good')
+    
+
+    return s
 
 
 # F. front_back
@@ -52,8 +67,17 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    firsthalf, secondhalf = (len(a) + 1)/2, (len(b) + 1)/2
+    return  a[:int(firsthalf)] + b[:int(secondhalf)] + a[int(firsthalf):] + b[int(secondhalf):]
+
+    # if len(a)% 2 == 0:
+    # else:
+    #     firsthalf, secondhalf = a[:len(a)+1/2], a[len(a)+1/2:]
+
+    # if len(b)%2 == 0:
+    #     thirdhalf, fourthhalf = b[:len(b)+1/2], b[len(b)+1/2:]
+    # else:
+    #     thirdhalf, fourthhalf = b[:len(b)/2], b[len(b)/2:]
 
 
 # Provided simple test() function used in main() to print
