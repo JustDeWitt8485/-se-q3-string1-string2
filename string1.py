@@ -4,7 +4,9 @@ Kenzie assignment: String1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = """Tracy DeWitt, used 
+https://docs.python.org/3/library/stdtypes.html#string-methods 
+for assistance"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -28,8 +30,13 @@ __author__ = "???"
 
 
 def donuts(count):
-    # your code here
-    return
+    x = 'Number of donuts: '
+    y = count
+    if y >= 10:
+        str1 = x + 'many'
+    else:
+        str1 = x + str(y)
+    return str1
 
 
 # B. both_ends
@@ -42,8 +49,9 @@ def donuts(count):
 
 
 def both_ends(s):
-    # your code here
-    return
+    if len(s) <= 2:
+        return ''
+    return s[:2] + s[-2:]
 
 
 # C. fix_start
@@ -58,8 +66,11 @@ def both_ends(s):
 
 
 def fix_start(s):
-    # your code here
-    return
+    char1 = s[0]
+    s = s.replace(char1, '*')
+    s = char1 + s[1:]
+
+    return s
 
 
 # D. mix_up
@@ -73,8 +84,9 @@ def fix_start(s):
 
 
 def mix_up(a, b):
-    # your code here
-    return
+    mixed_a = b[:2] + a[2:]
+    mixed_b = a[:2] + b[2:]
+    return mixed_a + " " + mixed_b
 
 
 # Provided simple test() function used in main() to print
