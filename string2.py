@@ -6,7 +6,8 @@ Kenzie assignment: String2
 # Give credit where credit is due.
 __author__ = """Tracy DeWitt , used Howard Post
 https://www.w3schools.com/python/ref_string_replace.asp,
-https://stackoverflow.com/questions/17002516/python-divide-odd-length-string-and-combine"""
+https://stackoverflow.com/questions/17002516
+/python-divide-odd-length-string-and-combine"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -50,9 +51,9 @@ def not_bad(s):
     s_bad = s.find('bad')
 
     if s_not < s_bad:
-        s = s.replace(s[s_not:], 'good')
-    
-
+        s = s.replace(s[s_not: s_bad], '')
+    # else:
+    #     s.replace(s[:s_bad], 'good')
     return s
 
 
@@ -68,16 +69,8 @@ def not_bad(s):
 
 def front_back(a, b):
     firsthalf, secondhalf = (len(a) + 1)/2, (len(b) + 1)/2
-    return  a[:int(firsthalf)] + b[:int(secondhalf)] + a[int(firsthalf):] + b[int(secondhalf):]
-
-    # if len(a)% 2 == 0:
-    # else:
-    #     firsthalf, secondhalf = a[:len(a)+1/2], a[len(a)+1/2:]
-
-    # if len(b)%2 == 0:
-    #     thirdhalf, fourthhalf = b[:len(b)+1/2], b[len(b)+1/2:]
-    # else:
-    #     thirdhalf, fourthhalf = b[:len(b)/2], b[len(b)/2:]
+    return a[:int(firsthalf)] + b[:int(secondhalf)] + \
+        a[int(firsthalf):] + b[int(secondhalf):]
 
 
 # Provided simple test() function used in main() to print
