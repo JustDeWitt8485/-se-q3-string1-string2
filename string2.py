@@ -5,6 +5,7 @@ Kenzie assignment: String2
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
 __author__ = """Tracy DeWitt , used Howard Post
+Joseph Hafed
 https://www.w3schools.com/python/ref_string_replace.asp,
 https://stackoverflow.com/questions/17002516
 /python-divide-odd-length-string-and-combine"""
@@ -49,11 +50,8 @@ def verbing(s):
 def not_bad(s):
     s_not = s.find('not')
     s_bad = s.find('bad')
-
-    if s_not < s_bad:
-        s = s.replace(s[s_not: s_bad], '')
-    # else:
-    #     s.replace(s[:s_bad], 'good')
+    if s_bad > s_not and s_bad != -1 and s_not != -1:
+        s = s.replace(s[s_not:(s_bad+3)], 'good')
     return s
 
 
